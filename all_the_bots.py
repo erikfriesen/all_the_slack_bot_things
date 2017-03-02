@@ -1,5 +1,5 @@
 from datetime import datetime
-import mysql.connector, requests
+import mysql.connector, requests, configparser
 from flask import Flask
 from flask_slack import Slack
 from flask_slack import SlackError
@@ -9,6 +9,8 @@ from threading import Thread
 from flask import jsonify
 import random
 
+config = configparser.ConfigParser()
+config.read('config_the_bots.ini')
 
 from scoreboard_renderer import renderBitch
 app = Flask(__name__)
