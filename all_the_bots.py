@@ -10,7 +10,7 @@ from flask import jsonify
 import random
 
 config = configparser.ConfigParser()
-config.read('config_the_bots.ini')
+config.read('configs/config_the_bots.ini')
 
 from scoreboard_renderer import renderBitch
 app = Flask(__name__)
