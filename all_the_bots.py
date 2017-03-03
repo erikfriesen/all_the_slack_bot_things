@@ -20,9 +20,9 @@ email_blacklist = ['vivi@slackfu.com']
 slack = Slack(app)
 app.add_url_rule('/', view_func=slack.dispatch)
 #gisdevs points xxxx team_id = 'xxxx'
-#the spatial ones flaskpaw xxxx team_id='xxxx'
-@slack.command('points', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+#the spatial ones flaskpaw xxxx team_id = 'xxxx'
+@slack.command('points', config['points']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def your_method(**kwargs):
     #get the kwargs
     text = kwargs.get('text')
@@ -244,8 +244,8 @@ def moneyOnTheFloor(n, r):
 
 
 
-@slack.command('tteesstt', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('tteesstt', config['tteesstt']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def bum(**kwargs):
     #get the kwargs
     text = kwargs.get('text')
@@ -275,8 +275,8 @@ def bum(**kwargs):
 
     #return slack.response("this is text")
 
-@slack.command('badgers', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('badgers', config['badgers']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def bum(**kwargs):
     #get the kwargs
     text = kwargs.get('text')
@@ -291,26 +291,26 @@ def bum(**kwargs):
     _response_type = 'ephemeral'
     return slack.response("https://www.youtube.com/watch?v=gx6TBrfCW54&feature=youtu.be&t=16s",response_type="in_channel")
 
-@slack.command('thumbsup', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('thumbsup', config['thumbsup']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl4(**kwargs):
     return slack.response("https://imgur.com/uKL8tJg.gif",response_type='in_channel')
 
-@slack.command('believe', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('believe', config['believe']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl5(**kwargs):
     return slack.response("https://youtu.be/YLO7tCdBVrA?t=2s",response_type='in_channel')
 
-@slack.command('hi', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('hi', config['hi']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl6(**kwargs):
     return slack.response("https://media.giphy.com/media/SYhK02vJMUeL6/giphy.gif",response_type='in_channel')
 
 
 
 
-@slack.command('deepthoughts', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('deepthoughts', config['deepthoughts']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl7(**kwargs):
     quotes = [
     "When you're riding in a time machine way far into the future, don't stick your elbow out the window, or it'll turn into a fossil.",
@@ -454,23 +454,23 @@ def sl7(**kwargs):
 ]
     return slack.response(random.choice(quotes),response_type='in_channel')
 
-@slack.command('thisisfine', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('thisisfine', config['thisisfine']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl8(**kwargs):
     return slack.response('http://gph.is/1IPoO7R',response_type='in_channel')
 
-@slack.command('iwritecode', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('iwritecode', config['iwritecode']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def sl9(**kwargs):
     return slack.response('http://resguru.com/wp-content/uploads/2011/05/angry-keyboard-user.gif',response_type='in_channel')
 
-@slack.command('wtf', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('wtf', config['wtf']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def s20(**kwargs):
     return slack.response('http://media1.giphy.com/media/aZ3LDBs1ExsE8/giphy.gif',response_type='in_channel')
 
-@slack.command('call_admin', token='xxxx',
-               team_id='xxxx', methods=['POST'])
+@slack.command('call_admin', config['call_admin']['token'],
+               config['DEFAULT']['team_id'], methods=['POST'])
 def s21(**kwargs):
     text = kwargs.get('text')
     user_name = kwargs.get('user_name')
