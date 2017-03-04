@@ -8,7 +8,6 @@ from random import randint
 from threading import Thread
 from flask import jsonify
 import random
-import bots
 
 config = configparser.ConfigParser()
 config.read('configs/config_the_bots.ini')
@@ -23,5 +22,5 @@ app.add_url_rule('/', view_func=slack.dispatch)
 #gisdevs points xxxx team_id = 'xxxx'
 #the spatial ones flaskpaw xxxx team_id = 'xxxx'
 
-
+import bots
 
